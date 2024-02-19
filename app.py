@@ -6,7 +6,7 @@ app = Flask(__name__)
 client = OpenAI()
 client.api_key = Config.OPENAI_API_KEY
 
-@app.route("/home", methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def home():
     paragraphs = []  # Initialize paragraphs as an empty list
     if request.method == 'POST':
