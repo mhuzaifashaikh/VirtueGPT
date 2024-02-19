@@ -1,8 +1,7 @@
 {
     "functions": {
       "api": {
-        "handler": "app.run",
-        "runtime": "python3.9"
+        "runtime": "python3.8"
       }
     }
   }
