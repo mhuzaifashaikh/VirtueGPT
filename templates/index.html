@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" viewport-fit=cover>
     
@@ -10,9 +12,9 @@
 </head>
 <body>
     <div class="main"></div>
-    <h1 class="fancy">VirtueGPT</h1>
+    <h1 >Virtue<a style="font-style: italic;">GPT</a></h1>
 
-    <h3>Find solace in timeless wisdom: Get relevant Hadiths and Quranic verses to uplift and guide you through life's challenges.</h3>
+    <h3>Find peace in timeless wisdom: Get relevant Hadiths and Quranic verses to uplift and guide you through life's challenges.</h3>
     <div class="response-container">
         {% if paragraphs %}
             {% for paragraph in paragraphs %}
@@ -92,19 +94,81 @@ h1 {
   font-size: 8vw;
   text-align: center;
   line-height: 1;
+  font-weight: 300;
+  animation: lights 5s 750ms linear infinite;
+  font-family: Raleway, sans-serif;
+  position: absolute;
+    top: 3%;
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    font-weight: 300;
+    font-size: 68px;
+    letter-spacing: 5px;
 }
+
+@keyframes lights {
+  0% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+  30% { 
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  40% { 
+    color: hsl(230, 100%, 95%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 90%, 0.5),
+      -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+      0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  70% {
+    color: hsl(230, 80%, 90%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.5),
+      0 0 0.125em hsla(320, 100%, 60%, 0.5),
+      0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+      -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+  }
+  
+  100% {
+    color: hsl(230, 40%, 80%);
+    text-shadow:
+      0 0 1em hsla(320, 100%, 50%, 0.2),
+      0 0 0.125em hsla(320, 100%, 60%, 0.3),
+      1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+      -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+  }
+  
+}
+
 h3 {
   font-size: 15px;
   text-align: center;
   position: absolute;
   top: 13%;
-  font-family: Courier New, monospace;
-  font-style: oblique;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
   color: #f6fff3;
+  font-weight: 100;
   text-shadow: 0 0 0px rgba(255, 255, 255, 2.0), /* Adjust the glow color and intensity */
                  0 0 0px rgba(255, 255, 255, 2.6), /* Add more shadows to increase glow intensity */
                  0 0 10px rgba(2, 148, 253, 0.903),
-                 0 0 20px rgba(0, 255, 200, 0.892);
+                 0 0 20px hsla(320, 100%, 60%, 0.8);
   
 }
 
@@ -117,21 +181,7 @@ h3 {
     text-align: center;
     font-size: 68px; */ 
 
-    position: absolute;
-        top: 3%;
-        left: 0;
-        right: 0;
-        color: #FFF;
-        text-align: center;
-        font-family: "lato", sans-serif;
-        font-weight: 300;
-        font-size: 68px;
-        letter-spacing: 10px;
-
-        background: -webkit-linear-gradient(white, #38495a);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+   
     
 }
 
