@@ -387,21 +387,35 @@ body, button, input {
     z-index: 999; /* Ensure it's above other content */
         }
 
-.info-button a {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        .info-button a {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     display: block;
     width: 40px;
     height: 40px;
-    background-color: rgba(18, 55, 73, 0.694);
+    background-color: rgba(18, 55, 73, 0.441);
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
     font-size: 10px;
     text-decoration: none;
-    color: white;
-    box-shadow: 2px 
-    2px 4px rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.577);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.5); /* Initial glow effect */
+    transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+    animation: pulsate 1s infinite alternate; /* Pulsating glow effect */
+}
+
+.info-button a:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Increase glow on hover */
+}
+
+@keyframes pulsate {
+    0% {
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
 }
 
 
