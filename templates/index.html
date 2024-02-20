@@ -107,18 +107,32 @@ h3 {
 
 
 .fancy {
-    font-style: oblique;
-    font-family: Optima, sans-serif;
-    position: absolute;
-    top: 7%;
+    /* position: absolute;
+    
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 68px;
-    animation: changeColor 10s infinite; /* Smooth transition for color change */
+    font-size: 68px; */ 
 
-
+    position: absolute;
+        top: 3%;
+        left: 0;
+        right: 0;
+        color: #FFF;
+        text-align: center;
+        font-family: "lato", sans-serif;
+        font-weight: 300;
+        font-size: 68px;
+        letter-spacing: 10px;
+        
+        padding-left: 10px;
+        background: -webkit-linear-gradient(white, #38495a);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    
 }
+
 @keyframes changeColor {
     0% { color: #acd1e1; } /* Start color */
     33% { color: #a6c899; } /* First transition color */
