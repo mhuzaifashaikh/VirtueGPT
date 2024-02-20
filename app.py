@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request
 from openai import OpenAI
-from dfsdf import Config
+import os
 
 app = Flask(__name__)
 client = OpenAI()
-client.api_key = Config.OPENAI_API_KEY
+client.api_key = os.environ.get('openai')
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
