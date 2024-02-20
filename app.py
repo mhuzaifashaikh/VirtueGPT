@@ -41,9 +41,22 @@ def home():
             ]
         )
         ai_response = response.choices[0].message.content
-       
+        
+        # Split the response into paragraphs
         paragraphs = ai_response.split('\n')
-    return render_template('index.html', paragraphs=paragraphs)
+        
+        # Further split each paragraph into sentences and add new line between paragraphs
+        formatted_paragraphs = []
+        for paragraph in paragraphs:
+            sentences = paragraph.split('.')
+            formatted_paragraph = ' '.join(sentences)
+            formatted_paragraphs.append(formatted_paragraph.strip())
+        
+        # Join paragraphs with new lines in between
+        formatted_response = '\n\n'.join(formatted_paragraphs)
+        
+    return render_template('index.html', response=formatted_response)
+
 
 @app.before_request
 def before_request():
