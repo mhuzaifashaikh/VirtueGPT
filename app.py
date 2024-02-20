@@ -8,7 +8,7 @@ client.api_key = os.environ.get('OPENAI_API_KEY')
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    paragraphs = []  # Initialize paragraphs as an empty list
+    paragraphs = []  
     if request.method == 'POST':
         user_content = request.form['user_input']
         response = client.chat.completions.create(
@@ -24,9 +24,15 @@ def home():
             ]
         )
         ai_response = response.choices[0].message.content
-        # Split the AI response into paragraphs
+       
         paragraphs = ai_response.split('\n')
     return render_template('index.html', paragraphs=paragraphs)
+
+@app.before_request
+def before_request():
+    if request.method == 'GET':
+        
+        paragraphs = []
 
 # if __name__ == '__main__':
 #     app.run(debug=True)
