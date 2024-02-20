@@ -383,3 +383,32 @@ body, button, input {
 
  
  </style>
+
+
+
+
+
+<script>
+    // Array of placeholder texts
+    const placeholders = [
+        "It's tough to manage my job and personal time.",
+        "I'm overwhelmed by the loss of someone close to me.",
+        "Money problems stress me out a lot.",
+        "It's hard to make real friends in a world filled with technology.",
+        "Keeping my mind healthy while dealing with what people expect from me is tough."
+    ];
+
+    // Function to rotate placeholders every 3 seconds
+    function rotatePlaceholders() {
+        const input = document.getElementById('user_input');
+        let index = 0;
+
+        setInterval(() => {
+            input.placeholder = placeholders[index];
+            index = (index + 1) % placeholders.length;
+        }, 3000);
+    }
+
+    // Call the rotatePlaceholders function when the document is loaded
+    document.addEventListener('DOMContentLoaded', rotatePlaceholders);
+</script>
