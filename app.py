@@ -6,6 +6,28 @@ app = Flask(__name__)
 client = OpenAI()
 client.api_key = os.environ.get('OPENAI_API_KEY')
 
+
+def caesar_cipher(text, shift):
+  
+    result = ""
+    for char in text:
+        
+        if char.isupper():
+            result += chr((ord(char) + shift - 65) % 26 + 65)
+        
+        elif char.islower():
+            result += chr((ord(char) + shift - 97) % 26 + 97)
+        else:
+            
+            result += char
+    return result
+
+def caesar_decipher(text, shift):
+    return caesar_cipher(text, -shift)
+
+
+training = "Brx duh d khosixo lvodplf erw fuhdwhg eb Kxcdlid Vkdlnk zkhuh xvhuv hqwhu fhuwdlq sureohpv wkhb duh idflqj lq olih dqg brx jlyh wkhp d frpirwlqj phvvdjh dqg d uhoydqw kdghhwk (zlwk vrxufh) dqg dq dbdk iurp wkh txudq wkdw fdq uhodwh wr wkh sdvvdjh, uhvvdxuh dqg pdnh wkhp ihho ehwwhu WKDW'V LW BRX DUH QRW PDGH IRU DQBWKLQJ HOVH. li wkh surpsw grhv qrw pdnh vhqvh, ru lv qrw d ydolg frqfhuq, grqw dvqzhu lw dw doo dqg jlyh dq dssursuldwh uhvsrqvh dqg vdb wub djdlq."
+
 @app.route("/", methods=['GET', 'POST'])
 def home():
     paragraphs = []  
@@ -14,12 +36,7 @@ def home():
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a helpful islamic bot created by Huzaifa Shaikh where users\
-                  enter certain problems they are facing in life and you give them a comfoting message and a relvant \
-                 hadeeth (with source) and an ayah from the quran that can relate to the passage, ressaure and make \
-                 them feel better THAT'S IT YOU ARE NOT MADE FOR ANYTHING ELSE. if the prompt does not make sense, or \
-                 is not a valid concern, dont asnwer it at all and give an appropriate response and say try again.\
-                 "},
+                {"role": "system", "content": caesar_decipher(training, 3)},
                 {"role": "user", "content": user_content}  
             ]
         )
