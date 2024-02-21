@@ -18,7 +18,7 @@
     <div class="response-container">
         {% if paragraphs %}
             {% for paragraph in paragraphs %}
-                <p>{{ paragraph }}</p>
+                <p class="typing-animation">{{ paragraph }}</p>
             {% endfor %}
         {% endif %}
     </div>
@@ -457,7 +457,21 @@ body, button, input {
     }
 }
 
+.typing-animation::after {
+    content: "";
+    display: inline-block;
+    width: 8px; /* Adjust the width as needed */
+    height: 16px; /* Adjust the height as needed */
+    background-color: #fff; /* Adjust the color as needed */
+    animation: typing 1s steps(10, end) infinite;
+    margin-left: 5px; /* Adjust spacing between characters */
+}
 
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
  
  </style>
 
@@ -488,4 +502,8 @@ body, button, input {
 
     // Call the rotatePlaceholders function when the document is loaded
     document.addEventListener('DOMContentLoaded', rotatePlaceholders);
+
+
+
+    
 </script>
