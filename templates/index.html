@@ -16,11 +16,13 @@
 
     <h3>Find peace in timeless wisdom: Get relevant Hadiths and Quranic verses to uplift and guide you through life's challenges.</h3>
     <div class="response-container">
-        {% if paragraphs %}
-            {% for paragraph in paragraphs %}
-                <p id="response" class="hidden">{{ paragraph }}</p>
-            {% endfor %}
-        {% endif %}
+            {% if paragraphs %}
+                {% for paragraph in paragraphs %}
+                    <p id="response" class="hidden">{{ paragraph }}</p>
+                    <br> 
+                {% endfor %}
+            {% endif %}
+
     </div>
     <!-- <form action="/home" method="post" class="input-form">
         <label for="user_input" aria-placeholder="Enter"></label><br>
