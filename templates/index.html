@@ -286,14 +286,14 @@ body, button, input {
 
 
 
-    .info-button {
+.info-button {
     position: fixed;
     bottom: 70px; 
     right: 20px;
     z-index: 999; 
         }
 
-    .info-button a {
+        .info-button a {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     display: block;
@@ -342,9 +342,12 @@ body, button, input {
     align-items: center;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+    
     border-top: 0.5px solid #909090; /* Adding a 0.5px solid border on the top with color #ccc */
     border-left: 0.5px solid #909090; /* Adding a 0.5px solid border on the left with color #ccc */
     border-right: 0.5px solid #909090;
+    
+
 }
 
 
@@ -425,44 +428,6 @@ background: linear-gradient(29deg, rgba(83, 0, 83, 0.3) 0%, rgba(0,91,119,1) 100
             index = (index + 1) % placeholders.length;
         }, 3000);
     }
-
-    // Call the rotatePlaceholders function when the document is loaded
-    document.addEventListener('DOMContentLoaded', rotatePlaceholders);
-
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-    var responseElement = document.getElementById('response');
-    responseElement.innerHTML = ''; // Clear existing content
-
-    // Make a request to your API endpoint
-    fetch('your_api_endpoint')
-        .then(function(response) {
-            return response.json(); // Assuming your API returns JSON data
-        })
-        .then(function(data) {
-            var response = data.response; // Assuming your API response has a 'response' field
-            typeWriter(response, 0, function() {
-                console.log('Typing completed.');
-            });
-        })
-        .catch(function(error) {
-            console.error('Error fetching data:', error);
-        });
-
-    function typeWriter(text, i, cb) {
-        if (i < text.length) {
-            responseElement.innerHTML += text.charAt(i);
-            if (text.charAt(i) === '\n') {
-                responseElement.innerHTML += '<br>'; // Insert line break
-            }
-            i++;
-            setTimeout(function() { typeWriter(text, i, cb) }, 50);
-        } else {
-            cb();
-        }
-    }
-});
 
 
     
