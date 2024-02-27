@@ -18,7 +18,7 @@
     <div class="response-container">
         {% if paragraphs %}
             {% for paragraph in paragraphs %}
-                <p >{{ paragraph }}</p>
+                <p id="response">{{ paragraph }}</p>
             {% endfor %}
         {% endif %}
     </div>
@@ -183,7 +183,7 @@ h3 {
  
  
 .response-container {
-    text-align: center;
+    text-align: left;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -202,6 +202,18 @@ h3 {
                  0 0 30px rgba(255, 255, 255, 0.4),
                  0 0 35px rgba(255, 255, 255, 0.2);
     
+}
+
+#response {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(40, end);
+    
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
 
 @media screen and (max-width: 600px) {
@@ -274,14 +286,14 @@ body, button, input {
 
 
 
-.info-button {
+    .info-button {
     position: fixed;
     bottom: 70px; 
     right: 20px;
     z-index: 999; 
         }
 
-        .info-button a {
+    .info-button a {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     display: block;
@@ -312,23 +324,6 @@ body, button, input {
     }
 }
 
-.typing-animation::after {
-    content: "";
-    display: inline-block;
-    width: 8px; /* Adjust the width as needed */
-    height: 16px; /* Adjust the height as needed */
-    background-color: #fff; /* Adjust the color as needed */
-    animation: typing 1s steps(10, end) infinite;
-    margin-left: 5px; /* Adjust spacing between characters */
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-}
-
-
 
 
 
@@ -340,14 +335,19 @@ body, button, input {
     transform: translateX(-50%);
     width: 100%; /* Default width for mobile screens */
     background: rgb(4,0,78);
-background: linear-gradient(90deg, rgba(28, 0, 83, 0.6) 0%, rgba(90, 1, 72, 0.552) 100%);
+    background: linear-gradient(90deg, rgba(16, 1, 46, 0.6) 0%, rgba(56, 0, 44, 0.552) 100%);
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
+    border-top: 0.5px solid #909090; /* Adding a 0.5px solid border on the top with color #ccc */
+    border-left: 0.5px solid #909090; /* Adding a 0.5px solid border on the left with color #ccc */
+    border-right: 0.5px solid #909090;
 }
+
+
 @media (min-width: 768px) {
     .search-bar {
         width: 50%; /* Set width to 50% on laptop/PC screens */
@@ -429,6 +429,40 @@ background: linear-gradient(29deg, rgba(83, 0, 83, 0.3) 0%, rgba(0,91,119,1) 100
     // Call the rotatePlaceholders function when the document is loaded
     document.addEventListener('DOMContentLoaded', rotatePlaceholders);
 
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var responseElement = document.getElementById('response');
+    responseElement.innerHTML = ''; // Clear existing content
+
+    // Make a request to your API endpoint
+    fetch('your_api_endpoint')
+        .then(function(response) {
+            return response.json(); // Assuming your API returns JSON data
+        })
+        .then(function(data) {
+            var response = data.response; // Assuming your API response has a 'response' field
+            typeWriter(response, 0, function() {
+                console.log('Typing completed.');
+            });
+        })
+        .catch(function(error) {
+            console.error('Error fetching data:', error);
+        });
+
+    function typeWriter(text, i, cb) {
+        if (i < text.length) {
+            responseElement.innerHTML += text.charAt(i);
+            if (text.charAt(i) === '\n') {
+                responseElement.innerHTML += '<br>'; // Insert line break
+            }
+            i++;
+            setTimeout(function() { typeWriter(text, i, cb) }, 50);
+        } else {
+            cb();
+        }
+    }
+});
 
 
     
