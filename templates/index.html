@@ -497,10 +497,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var scrollIndicator = document.createElement('div');
         scrollIndicator.classList.add('scroll-down-indicator');
         scrollIndicator.textContent = 'Scroll Down';
-        // Insert the scroll indicator as the first child of the container
-        container.insertBefore(scrollIndicator, container.firstChild);
+        container.insertAdjacentElement('afterend', scrollIndicator);
     }
 });
+
 
 
     
