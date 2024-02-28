@@ -23,7 +23,13 @@
                 {% endfor %}
             {% endif %}
 
+            <div class="scroll-down-indicator">
+                Scroll Down
+            </div>
+
     </div>
+
+    
     <!-- <form action="/home" method="post" class="input-form">
         <label for="user_input" aria-placeholder="Enter"></label><br>
         <input type="text" id="user_input" name="user_input"><br><br>
@@ -49,6 +55,27 @@
 
 <style>
    
+
+   .scroll-down-indicator {
+    align-items: center;
+    justify-content: center;
+    color: #ffffff64;
+    font-size: 10px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
      
    .hidden {
     opacity: 0;
