@@ -57,7 +57,7 @@
    
 
    .scroll-down-indicator {
-    position: fixed;
+    position: absolute;
     transform: translateX(-50%);
     color: #ffffff56;
     font-size: 8px;
@@ -497,9 +497,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var scrollIndicator = document.createElement('div');
         scrollIndicator.classList.add('scroll-down-indicator');
         scrollIndicator.textContent = 'Scroll Down';
-        container.appendChild(scrollIndicator);
+        // Insert the scroll indicator as the first child of the container
+        container.insertBefore(scrollIndicator, container.firstChild);
     }
 });
+
 
     
 </script>
