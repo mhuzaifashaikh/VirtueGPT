@@ -23,9 +23,9 @@
                 {% endfor %}
             {% endif %}
 
-            <div class="scroll-down-indicator">
+            <!-- <div class="scroll-down-indicator">
                 Scroll Down
-            </div>
+            </div> -->
 
     </div>
 
@@ -488,6 +488,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('DOMContentLoaded', rotatePlaceholders);
 
 
+
+
+    window.addEventListener('DOMContentLoaded', function() {
+    var container = document.querySelector('.response-container');
+    
+    if (container.scrollHeight > container.clientHeight) {
+        var scrollIndicator = document.createElement('div');
+        scrollIndicator.classList.add('scroll-down-indicator');
+        scrollIndicator.textContent = 'Scroll Down';
+        container.appendChild(scrollIndicator);
+    }
+});
 
     
 </script>
