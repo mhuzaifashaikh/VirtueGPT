@@ -12,20 +12,18 @@
 </head>
 <body>
     <div class="main"></div>
-    <h1 >Virtue<a style="font-style: italic;">GPT</a></h1>
+    <h1 >Support</a></h1>
 
-    <h3>Find peace in timeless wisdom: Get relevant Hadiths and Quranic verses to uplift and guide you through life's challenges.</h3>
+    
     <div class="response-container">
-            {% if paragraphs %}
-                {% for paragraph in paragraphs %}
-                    <p id="response" class="hidden">{{ paragraph }}</p>
-                    <br> 
-                {% endfor %}
-            {% endif %}
+    
+    <p id="response"> Support VirtueGPT to keep it running smoothly. Your backing helps VirtueGPT continue its mission of providing helpful assistance. </p>
+        <br>
+    
+        <p id="response">25% of the support will be directed to Gaza through savethechildren.org. Thank you for being a part of this journey! </p>
 
-            <!-- <div class="scroll-down-indicator">
-                Scroll Down
-            </div> -->
+        <button class="button" onclick="window.open('https://buy.stripe.com/fZe4iU07Y8N54GkcMM', '_blank')">Donate</button>
+                  
 
     </div>
 
@@ -36,16 +34,6 @@
         <input type="submit" value=">" id="submit-button" class="arrow up">
     </form> -->
 
-    <form action="/" method="post" class="search-bar">
-        <input type="text" id="user_input" name="user_input" pattern=".*\S.*" required autocomplete="off">
-        <button class="search-btn" type="submit">
-            <span>Search</span>
-        </button>
-    </form>
-    
-    <div class="info-button">
-        <a href="support.html" target="_blank">support</a>
-    </div>
 
 </body>
 </html>
@@ -55,24 +43,38 @@
 
 <style>
    
+   .button {
+    background: rgb(6,0,124);
+    background: linear-gradient(29deg, rgba(6,0,124,1) 0%, rgba(6,255,208,1) 100%);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5%;
+    cursor: pointer;
+    border-radius: 13px; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: #9dddff solid 0.2px;
+    transition: background-color 0.3s; 
+}
 
-  
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        40% {
-            transform: translateY(-20px);
-        }
-        60% {
-            transform: translateY(-10px);
-        }
+.button:hover {
+    animation: glow 1s infinite alternate; /* Add glow animation */
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 30px rgba(6, 0, 124, 0.883); /* Initial glow effect */
     }
-    
+    to {
+        box-shadow: 0 0 40px rgba(33, 29, 111, 0.89); /* Final glow effect */
+    }
+}
+
+ 
          
-       .hidden {
-        opacity: 0;
-    }
+     
     
     @keyframes fadeIn {
         from { opacity: 0; }
@@ -189,34 +191,13 @@
       
     }
     
-    h3 {
-      font-size: 15px;
-      text-align: center;
-      position: absolute;
-      top: 13%;
-      font-family: 'Roboto', sans-serif;
-      font-style: italic;
-      color: #f6fff3;
-      font-weight: 100;
-      text-shadow: 0 0 0px rgba(255, 255, 255, 2.0), 
-                     0 0 0px rgba(255, 255, 255, 2.6), 
-                     0 0 10px rgba(2, 148, 253, 0.903),
-                     0 0 20px hsla(320, 100%, 60%, 0.8);
-      
-    }
+   
     
     
-    
-    @keyframes changeColor {
-        0% { color: #acd1e1; } 
-        33% { color: #a6c899; } 
-        66% { color: #e0e097; } 
-        100% { color: #acd1e1; } 
-    }
      
      
     .response-container {
-        text-align: center;
+        text-align: left;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -229,27 +210,13 @@
         margin-top: 15px; 
         margin-bottom: 5px; 
         transform: translate(-50%, -50%);
-        color: white;
+        color: rgb(244, 223, 158);
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
                      0 0 20px rgba(255, 255, 255, 0.6),
                      0 0 30px rgba(255, 255, 255, 0.4),
                      0 0 35px rgba(255, 255, 255, 0.2);
         
     }
-    
-    .scroll-down-indicator {
-        position: fixed;
-        justify-content: center;
-        align-items: center;
-        bottom: 100px;
-        left: 48%;
-        transform: translateX(-50%);
-        color: #ffffff56;
-        font-size: 8px;
-        animation: bounce 2s infinite;
-        
-    }
-    
     
     
     @media screen and (max-width: 600px) {
@@ -275,32 +242,8 @@
         
     }
     }
-    
-    
-    
-    .input-form {
-        position: fixed;
-        bottom: 0;
-        width: 70%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px;
-        background-color: rgba(255, 255, 255, 0.8);
-        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
-        border-top-right-radius: 1pc;
-        border-top-left-radius: 1pc;
-        
-    }
-    
-    
-     
-     .input-form input[type="text"] {
-         flex-grow: 1;
-         padding: 10px;
-         border: 1px solid #ccc;
-         border-radius: 5px;
-     }
+ 
+  
      
     
     
@@ -317,206 +260,8 @@
     }
     
      
-    
-    
-    
-    @media screen and (max-width: 600px) {
-      h3 {
-        font-size: 11px; 
-      }
-    
-    }
-    
-    
-    
-    
-    .info-button {
-        position: fixed;
-        bottom: 70px; 
-        right: 20px;
-        z-index: 999; 
-            }
-    
-            .info-button a {
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-style: italic;
-        display: block;
-        width: 35px;
-        height: 35px;
-        background-color: rgba(18, 55, 73, 0.441);
-        text-align: center;
-        line-height: 35px;
-        border-radius: 50%;
-        font-size: 8px;
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.577);
-        box-shadow: 0 0 0 rgba(255, 255, 255, 0.5); 
-        transition: box-shadow 0.3s ease; 
-        animation: pulsate 2s infinite alternate; 
-    }
-    
-    .info-button a:hover {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
-    }
-    
-    @keyframes pulsate {
-        0% {
-            box-shadow: 0 0 0 rgba(255, 255, 255, 0.5);
-        }
-        100% {
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-        }
-    }
-    
-    
-    
-    
-    
-    .search-bar {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%; /* Default width for mobile screens */
-        background: rgb(4,0,78);
-        background: linear-gradient(90deg, rgba(16, 1, 46, 0.6) 0%, rgba(56, 0, 44, 0.552) 100%);
-        padding: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-top-left-radius: 7px;
-        border-top-right-radius: 7px;
-        box-shadow: 0 0 5px 2px #6b72ae; 
-        border-top: 0.5px solid #909090; /* Adding a 0.5px solid border on the top with color #ccc */
-        border-left: 0.5px solid #909090; /* Adding a 0.5px solid border on the left with color #ccc */
-        border-right: 0.5px solid #909090;
-        
-    
-    }
-    
-    
-    @media (min-width: 768px) {
-        .search-bar {
-            width: 50%; /* Set width to 50% on laptop/PC screens */
-        }
-    }
-    
-    .search-bar input {
-        width: calc(100% - 40px); /* Adjust according to your button size and padding */
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        background-color: #0d1a2a; /* Dark grey input background */
-        color: #fff; /* Text color */
-    }
-    
-    .search-bar button {
-        background: rgb(4,0,78);
-    background: linear-gradient(29deg, rgba(83, 0, 83, 0.3) 0%, rgba(0,91,119,1) 100%);
-        color: #fff; /* Text color */
-        border: none;
-        padding: 10px;
-        margin-left: 5px;
-        border-radius: 30px;
-        cursor: pointer;
-        
-    }
-    
-    .search-bar button span {
-        display: none; /* Hide the text "Search" */
-        
-    }
-    
-    /* Up arrow icon */
-    .search-bar button::before {
-        content: '\2191'; /* Unicode for up arrow */
-        display: inline-block;
-    
-    }
-    
-    /* Hover effect */
-    .search-bar button:hover {
-        background-color: #777; /* Dark grey hover background */
-    }
-    
-    /* Focus effect */
-    .search-bar input:focus {
-        outline: none;
-        box-shadow: 0 0 5px #fff; /* White shadow for focus */
-    }
-    
-     
      </style>
     
     
     
     
-    
-    <script>
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        var responseElement = document.getElementById('response');
-        var text = responseElement.textContent.trim(); // Get the text content
-        var lines = text.split('\n'); // Split the text into lines
-        responseElement.innerHTML = ''; // Clear existing content
-    
-        lines.forEach(function(line, index) {
-            // Create a new paragraph element for each line
-            var lineElement = document.createElement('p');
-            lineElement.textContent = line;
-    
-            // Append the paragraph element to the response container
-            responseElement.appendChild(lineElement);
-    
-            // Apply animation to each line
-            setTimeout(function() {
-                lineElement.classList.add('fade-in');
-            }, index * 1000); // Adjust the delay between each line
-        });
-    
-        // Remove the 'hidden' class to start the animation
-        responseElement.classList.remove('hidden');
-    });
-    
-    
-        // Array of placeholder texts
-        const placeholders = [
-            "It's tough to manage my job and personal time.",
-            "I'm overwhelmed by the loss of someone close to me.",
-            "Money problems stress me out a lot.",
-            "It's hard to make real friends in a world filled with technology.",
-            "Keeping my mind healthy while dealing with what people expect from me is tough."
-        ];
-    
-        // Function to rotate placeholders every 3 seconds
-        function rotatePlaceholders() {
-            const input = document.getElementById('user_input');
-            let index = 0;
-    
-            setInterval(() => {
-                input.placeholder = placeholders[index];
-                index = (index + 1) % placeholders.length;
-            }, 3000);
-        }
-    
-        // Call the rotatePlaceholders function when the document is loaded
-        document.addEventListener('DOMContentLoaded', rotatePlaceholders);
-    
-    
-    
-    
-        window.addEventListener('DOMContentLoaded', function() {
-        var container = document.querySelector('.response-container');
-        
-        if (container.scrollHeight > container.clientHeight) {
-            var scrollIndicator = document.createElement('div');
-            scrollIndicator.classList.add('scroll-down-indicator');
-            scrollIndicator.textContent = 'Scroll Down';
-            container.insertAdjacentElement('afterend', scrollIndicator);
-        }
-    });
-    
-    
-    
-        
-    </script>
