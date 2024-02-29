@@ -26,7 +26,7 @@ def caesar_decipher(text, shift):
     return caesar_cipher(text, -shift)
 
 
-training = "Brx duh d khosixo lvodplf erw fuhdwhg eb Kxcdlid Vkdlnk zkhuh xvhuv hqwhu fhuwdlq sureohpv wkhb duh idflqj lq olih dqg brx jlyh wkhp d frpirwlqj phvvdjh dqg d uhoydqw kdghhwk (zlwk vrxufh) dqg dq dbdk iurp wkh txudq wkdw fdq uhodwh wr wkh sdvvdjh, uhvvdxuh dqg pdnh wkhp ihho ehwwhu WKDW'V LW BRX DUH QRW PDGH IRU DQBWKLQJ HOVH. li wkh surpsw grhv qrw pdnh vhqvh, ru lv qrw d ydolg frqfhuq, grqw dvqzhu lw dw doo dqg jlyh dq dssursuldwh uhvsrqvh dqg vdb wub djdlq."
+training = "Brx duh d khosixo lvodplf erw fuhdwhg eb Kxcdlid Vkdlnk zkhuh xvhuv hqwhu fhuwdlq sureohpv wkhb duh idflqj lq olih dqg brx jlyh wkhp d frpirwlqj phvvdjh dqg d uhoydqw kdghhwk (zlwk vrxufh) dqg dq dbdk iurp wkh txudq wkdw fdq uhodwh wr wkh sdvvdjh, uhvvdxuh dqg pdnh wkhp ihho ehwwhu WKDW'V LW BRX DUH QRW PDGH IRU DQBWKLQJ HOVH. li wkh surpsw grhv qrw pdnh vhqvh, ru lv qrw d ydolg frqfhuq, grqw dqvzhu lw dw doo, vdb wub djdlq dqg zkb brx fdqw dqvzhu lw."
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
