@@ -45,6 +45,10 @@ def home():
         paragraphs = ai_response.split('\n')
     return render_template('index.html', paragraphs=paragraphs)
 
+@app.route('/support')
+def support():
+    return render_template('support.html')
+
 @app.before_request
 def before_request():
     if request.method == 'GET':
